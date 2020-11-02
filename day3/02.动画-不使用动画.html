@@ -11,7 +11,9 @@
 
 <body>
   <div id="app">
-    <p v-for="(user, i) in list">Id：{{ user.id }} --- 名字：{{ user.name }} --- 索引：{{i}}</p>
+    <input type="button" value="toggle" @click="flag=!flag">
+    <!-- 需求： 点击按钮，让 h3 显示，再点击，让 h3 隐藏 -->
+    <h3 v-if="flag">这是一个H3</h3>
   </div>
 
   <script>
@@ -19,12 +21,7 @@
     var vm = new Vue({
       el: '#app',
       data: {
-        list: [
-          { id: 1, name: 'zs1' },
-          { id: 2, name: 'zs2' },
-          { id: 3, name: 'zs3' },
-          { id: 4, name: 'zs4' }
-        ]
+        flag: false
       },
       methods: {}
     });
